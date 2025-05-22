@@ -36,21 +36,23 @@ const IDCard: React.FC<{ side?: 'front' | 'back' }> = ({ side = 'front' }) => {
   if (side === 'back') {
     return (
       <div className="bg-white rounded-lg overflow-hidden shadow-lg border border-gray-200">
-        <div className="relative w-full" style={{ aspectRatio: '0.63/1' }}>
-          <div className="bg-gradient-to-r from-gray-800 to-gray-700 p-4">
-            <div className="flex items-center justify-center">
-              <img src="/rl-logo.png" alt="Royal Logistics" className="h-[7rem] mb-2" />
-            </div>
+        <div className="relative w-full" style={{ aspectRatio: '0.63/1', backgroundImage: 'url(/path/to/your/background.jpg)', backgroundSize: 'cover' }}>
+        {/* Logo Header */}
+        <div className="bg-gradient-to-b from-gray-900 to-gray-800 p-3">
+          <div className="flex flex-col items-center justify-center">
+            <img src="/rl-logo.png" alt="Royal Logistics" className="h-[6rem] mb-2 ml-[1.7rem]" />
           </div>
+        </div>
           
-          <div className="p-6 flex flex-col items-center justify-between h-[calc(100%-4rem)]">
-            <div className="w-full space-y-6">
-              <div className="text-center mb-6">
+          <div className=" p-4 flex flex-col items-center justify-between h-[calc(95%-4rem)]">
+             
+            <div className="w-full space-y-4">
+              <div className="text-center mb-2">
                 <p className="text-sm text-gray-600 mb-2">Scan QR code to verify driver details</p>
                 <canvas ref={qrCodeRef} className="mx-auto bg-white p-3 rounded-lg shadow-sm"></canvas>
               </div>
 
-              <div className="border-t border-gray-200 pt-4">
+              <div className="border-t border-gray-200 pt-1">
                 <div className="text-center space-y-2">
   <div className="mb-4">
     <h3 className="font-bold text-gray-800">Royal Logistics Headquarters</h3>
