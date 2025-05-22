@@ -25,7 +25,7 @@ const IDCard: React.FC<{ side?: 'front' | 'back' }> = ({ side = 'front' }) => {
       JsBarcode(barcodeRef.current, employeeData.licenseNo, {
         format: "CODE128",
         width: 2,
-        height: 40,
+        height: 30,
         displayValue: true,
         fontSize: 12,
         margin: 5
@@ -39,7 +39,7 @@ const IDCard: React.FC<{ side?: 'front' | 'back' }> = ({ side = 'front' }) => {
         <div className="relative w-full" style={{ aspectRatio: '0.63/1' }}>
           <div className="bg-gradient-to-r from-gray-800 to-gray-700 p-4">
             <div className="flex items-center justify-center">
-              <img src="/rl-logo.png" alt="Royal Logistics" className="h-[6rem] mb-2" />
+              <img src="/rl-logo.png" alt="Royal Logistics" className="h-[7rem] mb-2" />
             </div>
           </div>
           
@@ -75,26 +75,26 @@ const IDCard: React.FC<{ side?: 'front' | 'back' }> = ({ side = 'front' }) => {
     <div className="bg-white rounded-lg overflow-hidden shadow-lg border border-gray-200">
       <div className="relative w-full" style={{ aspectRatio: '0.63/1', backgroundImage: 'url(/path/to/your/background.jpg)', backgroundSize: 'cover' }}>
         {/* Logo Header */}
-        <div className="bg-gradient-to-b from-gray-900 to-gray-800 p-6">
+        <div className="bg-gradient-to-b from-gray-900 to-gray-800 p-3">
           <div className="flex flex-col items-center justify-center">
-            <img src="/rl-logo.png" alt="Royal Logistics" className="h-[6rem] mb-2" />
+            <img src="/rl-logo.png" alt="Royal Logistics" className="h-[6rem] mb-2 ml-[1.7rem]" />
           </div>
         </div>
 
         <div className="flex justify-center pt-6">
-          <div className="w-32 h-32 rounded-lg bg-white p-1 shadow-lg">
+          <div className="w-24 h-24 rounded-lg bg-white p-1 shadow-lg">
             {employeeData.avatarUrl ? (
               <img src={employeeData.avatarUrl} alt="Driver" className="w-full h-full object-cover rounded-lg" />
             ) : (
               <div className="bg-yellow-300 rounded-lg w-full h-full flex items-center justify-center">
-                <UserCircle size={80} className="text-gray-800" />
+                <UserCircle size={60} className="text-gray-800" />
               </div>
             )}
           </div>
         </div>
 
         <div className="pt-4 px-6 text-center">
-          <h2 className="text-2xl font-bold text-gray-800">{employeeData.name}</h2>
+          <h2 className="text-xl font-bold text-gray-800">{employeeData.name}</h2>
           <p className="text-lg font-medium text-yellow-600 mb-4">{employeeData.position}</p>
           
           <div className="space-y-2 text-left bg-gray-50/90 p-4 rounded-lg">
