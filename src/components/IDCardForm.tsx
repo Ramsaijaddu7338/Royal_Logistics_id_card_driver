@@ -55,7 +55,7 @@ const IDCardForm: React.FC = () => {
       
       <div>
         <label htmlFor="licenseExpiry" className="block text-sm font-medium text-gray-700 mb-1">
-          License Expiry Date
+          Expiry Date
         </label>
         <input
           type="date"
