@@ -12,7 +12,7 @@ const IDCard: React.FC<{ side?: 'front' | 'back' }> = ({ side = 'front' }) => {
   useEffect(() => {
     if (qrCodeRef.current) {
       QRCode.toCanvas(qrCodeRef.current, JSON.stringify(employeeData), {
-        width: 180,
+        width: 160,
         margin: 2,
         color: {
           dark: '#000000',
@@ -58,9 +58,9 @@ const IDCard: React.FC<{ side?: 'front' | 'back' }> = ({ side = 'front' }) => {
     <h3 className="font-bold text-gray-800">Royal Logistics Headquarters</h3>
     <p className="text-sm text-gray-600">Global Transportation Solutions</p>
   </div>
-  <p className="text-sm"><b>D.No. 8-1-284/OU/279/1, Plot No. 279/1 & 279,2nd Floor, OU Employees Co-operative Society Ltd.,Shaikpet, Hyderabad - 500 089</b></p>
+  <p className="text-sm"><b>D.No. 54/85, Plot No. 279/1 & 279,2nd Floor, OU Employees Co-operative Society Ltd.,Shaikpet, Hyderabad - 500 089</b></p>
   <p className="text-sm">Ph: 040-23568982</p>
-  <p className="text-sm">www.royallogistics.com</p>
+  <p className="text-sm">www.royalslogistics.com</p>
 </div>
 
               </div>
@@ -74,7 +74,7 @@ const IDCard: React.FC<{ side?: 'front' | 'back' }> = ({ side = 'front' }) => {
   }
 
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-lg border border-gray-200">
+    <div className="bg-white rounded-lg overflow-hidden shadow-lg border border-gray-200" style={{ width: 350, height: 580 }}>
       <div className="relative w-full" style={{ aspectRatio: '0.63/1', backgroundImage: 'url(/path/to/your/background.jpg)', backgroundSize: 'cover' }}>
         {/* Logo Header */}
         <div className="bg-gradient-to-b from-gray-900 to-gray-800 p-3">
@@ -83,8 +83,8 @@ const IDCard: React.FC<{ side?: 'front' | 'back' }> = ({ side = 'front' }) => {
           </div>
         </div>
 
-        <div className="flex justify-center pt-6">
-          <div className="w-24 h-24 rounded-lg bg-white p-1 shadow-lg">
+        <div className="flex justify-center pt-1">
+          <div className="w-32 h-40 rounded-lg bg-white p-1 shadow-lg">
             {employeeData.avatarUrl ? (
               <img src={employeeData.avatarUrl} alt="Driver" className="w-full h-full object-cover rounded-lg" />
             ) : (
@@ -95,7 +95,7 @@ const IDCard: React.FC<{ side?: 'front' | 'back' }> = ({ side = 'front' }) => {
           </div>
         </div>
 
-        <div className="pt-4 px-6 text-center">
+        <div className="pt-1 px-4 text-center">
           <h2 className="text-xl font-bold text-gray-800">{employeeData.name}</h2>
           <p className="text-lg font-medium text-yellow-600 mb-4">{employeeData.position}</p>
           
@@ -118,8 +118,8 @@ const IDCard: React.FC<{ side?: 'front' | 'back' }> = ({ side = 'front' }) => {
             </p>
           </div>
 
-          <div className="mt-4 flex justify-center">
-            <svg ref={barcodeRef}></svg>
+          <div className="mt-2 flex justify-center">
+            <svg ref={barcodeRef} className="w-56 h-12"></svg>
           </div>
         </div>
       </div>
